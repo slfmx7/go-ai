@@ -1,0 +1,10 @@
+ai:
+  api_key: sk-ws-H.EHXRMIH.ARgF.MEUCIQCPwOU9Dleco2nofVqJByZ87Wxb_tjT0YN9mJQpaMbPLwIgZmfnj4UO5E6gmS25z4Cs37SOka86YUMUNf3jdgXRN_4
+  model: text-embedding-v3
+  base_url: https://dashscope.aliyuncs.com/compatible-mode/v1
+
+qdrant:
+  host: 192.168.150.114
+  port: 6334
+  dimension: 1024
+  embedding_model: BAAI/bge-large-zh-v1.5
