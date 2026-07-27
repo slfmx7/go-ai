@@ -8,6 +8,11 @@ import (
 	"github.com/sashabaranov/go-openai"
 )
 
+// GetAiClient 获取ai客户端
+/**
+ * 这里不是选择open-ai模型需要重新设置模型地址
+ * @return *openai.Client
+ */
 func GetAiClient() *openai.Client {
 	clientConfig := openai.DefaultConfig(config.ConfigInfo.AIConfig.ApiKey)
 	clientConfig.BaseURL = config.ConfigInfo.AIConfig.BaseUrl
@@ -15,6 +20,13 @@ func GetAiClient() *openai.Client {
 	return client
 }
 
+// GetEmbedding 获取嵌入向量
+/**
+ * @param context 上下文
+ * @param text 文本
+ * @return [][]float32 嵌入向量
+ * @return error 错误信息
+ */
 func GetEmbedding(context context.Context, text []string) ([][]float32, error) {
 	client := GetAiClient()
 	embedding, err := client.CreateEmbeddings(

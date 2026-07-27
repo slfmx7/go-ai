@@ -5,7 +5,7 @@ import "github.com/qdrant/go-client/qdrant"
 func ConvertFilterCondition() *qdrant.Filter {
 	gteV := float64(500)
 	lteV := float64(1600)
-	// 创建一个过滤条件 品牌必须是Nike或者Adidas 价格在500-1500之间 必须是一手
+	// 创建一个过滤条件 品牌必须是Nike或者Adidas 必须是一手 或者价格在500-1500之间
 	return &qdrant.Filter{
 		Must: []*qdrant.Condition{
 			{

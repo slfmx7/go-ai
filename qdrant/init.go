@@ -32,11 +32,12 @@ func CreateSingleCollection(ctx context.Context, documentName string) error {
 	} else {
 		err := QdrantClient.CreateCollection(ctx, &qdrant.CreateCollection{
 			CollectionName: documentName,
-			VectorsConfig: &qdrant.VectorsConfig{ // 指定集合向量配置优先级高
+			VectorsConfig: &qdrant.VectorsConfig{
+				// 指定集合向量配置优先级高
 				Config: &qdrant.VectorsConfig_Params{
 					Params: &qdrant.VectorParams{
 						Size:     uint64(config.ConfigInfo.QdrantConfig.Dimension), // 指定集合维度
-						Distance: qdrant.Distance_Cosine,
+						Distance: qdrant.Distance_Cosine,                           // 指定相似度计算算法
 					},
 				},
 			},

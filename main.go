@@ -11,7 +11,11 @@ import (
 )
 
 func main() {
-	queryDataFilter()
+	filePath := "t_p.txt"
+	err := utils.ReadFileByCallBack(filePath, utils.PrintFile)
+	if err != nil {
+		panic(err)
+	}
 }
 func queryDataFilter() {
 	background := context.Background()
